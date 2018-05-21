@@ -1,0 +1,1 @@
+the project is arming to develop a interesting game based on SLAM for android;
