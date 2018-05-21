@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CameraActivity">
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000"
+        tools:context="com.daodaokami.lut.camera_video_c_lut.CameraActivity" />
+
+    <Button
+        android:id="@+id/btn_decompose_video"
+        android:text="@string/decompose_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_calculate_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</android.support.constraint.ConstraintLayout>
