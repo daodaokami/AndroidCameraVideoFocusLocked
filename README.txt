@@ -1,1 +1,2 @@
-the project is arming to develop a interesting game based on SLAM for android;
+the project is armed at developing SLAM for android;
+Applications include AR(games or same thing just like faceU), relocation, range system ...
