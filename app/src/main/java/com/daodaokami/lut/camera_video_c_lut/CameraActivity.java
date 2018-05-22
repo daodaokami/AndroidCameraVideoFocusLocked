@@ -23,7 +23,6 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
         System.loadLibrary("opencv_java3");
   }
 
-    private static CExFuncLoader cExFuncLoader = new CExFuncLoader();
     private static String TAG = "CAMERA_ACTIVITY";
     private Button decomposeBtn;
     private boolean isDecomposedAvailable;
@@ -48,14 +47,12 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
         EventBus.getDefault().register(this);
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.tv_calculate_state);
-        tv.setText(stringFromJNI());
     }
 
     /**
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
      */
-    public native String stringFromJNI();
 
     @Override
     public void onClick(View v) {
@@ -71,7 +68,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
             //nothing to do
             Log.i(TAG, "onClick: is decompose not available vedio not found");
         }
-        cExFuncLoader.getCameraPose(videoPath, 0);
+        //cExFuncLoader.getCameraPose(videoPath, 0);
 
     }
 
@@ -87,7 +84,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
         Log.d(TAG, "messageEventBus: "+vrEvent.toString());
         isDecomposedAvailable = true;
         videoPath = vrEvent.getVedioPath();
-        ppc.setVedioPath(videoPath);
+        ppc.setVideoPath(videoPath);
     }
 
     @Override

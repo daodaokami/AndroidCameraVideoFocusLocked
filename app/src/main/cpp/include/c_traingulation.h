@@ -23,6 +23,7 @@ void pose_estimation_2d2d(
         const vector<DMatch>& matches,
         const Mat& K,
         Mat& R, Mat& t);
+
 void pose_estimation_2d2d(const Mat& img_1,
                           const Mat& img_2,
                           const Mat& K,Mat& R, Mat& t){
@@ -38,7 +39,7 @@ void pose_estimation_2d2d(const Mat& img_1,
     pose_estimation_2d2d(keypoints_1, keypoints_2, good_matches,
                          K, R, t);
 
-    string s_R="", s_t="";
+   /* string s_R="", s_t="";
     for(int i=0;i<3;i++){
         for(int j=0;j<3;j++){
             s_R += R.at<double>(i,j);
@@ -52,7 +53,7 @@ void pose_estimation_2d2d(const Mat& img_1,
     cout<<"R"<<endl<<R<<endl;
     cout<<"t"<<endl<<t<<endl;
     cout<<"s_R"<<endl<<s_R<<endl;
-    cout<<"s_t"<<endl<<s_t<<endl;
+    cout<<"s_t"<<endl<<s_t<<endl;*/
 }
 
 void pose_estimation_2d2d(

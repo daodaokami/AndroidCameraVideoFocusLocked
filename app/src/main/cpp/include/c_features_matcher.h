@@ -8,18 +8,14 @@
 using namespace std;
 using namespace cv;
 
-void getImg(const string filepath, Mat& img){
-    string file = filepath + to_string(0)+".jpg";
-    img = imread(file, IMREAD_COLOR);
-}
-
+//不能直接读取img，需要在java层生成bitmap的图像数据，传递给c
 void get_matchfeatures_orb(const Mat& img_1, const Mat& img_2,
                            vector<KeyPoint>& keypoints_1,
                            vector<KeyPoint>& keypoints_2,
                             Mat& descriptors_1, Mat& descriptors_2, vector<DMatch>& good_matches){
     Ptr<FeatureDetector> detector = ORB::create();
     Ptr<DescriptorExtractor> descriptor = ORB::create();
-    /*Ptr<DescriptorMatcher> matcher  = DescriptorMatcher::create ( "BruteForce-Hamming" );
+    Ptr<DescriptorMatcher> matcher  = DescriptorMatcher::create ( "BruteForce-Hamming" );
     //-- 第一步:检测 Oriented FAST 角点位置
     detector->detect ( img_1,keypoints_1 );
     detector->detect ( img_2,keypoints_2 );
@@ -31,7 +27,7 @@ void get_matchfeatures_orb(const Mat& img_1, const Mat& img_2,
     //-- 第三步:对两幅图像中的BRIEF描述子进行匹配，使用 Hamming 距离
     vector<DMatch> matches;
     //BFMatcher matcher ( NORM_HAMMING );
-    matcher->match(descriptors_1, descriptors_2, matches, nullptr);
+    matcher->match(descriptors_1, descriptors_2, matches);
 
     double min_dist=10000, max_dist=0;
 
@@ -53,7 +49,7 @@ void get_matchfeatures_orb(const Mat& img_1, const Mat& img_2,
         {
             good_matches.push_back ( matches[i] );
         }
-    }*/
+    }
 }
 
 #endif //CAMERA_VIDEO_C_LUT_FEATURES_MATCH_H

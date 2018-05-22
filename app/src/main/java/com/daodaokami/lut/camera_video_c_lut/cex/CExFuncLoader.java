@@ -5,6 +5,6 @@ import org.opencv.core.Mat;
 import java.util.List;
 
 public class CExFuncLoader {
-    public native void getCameraPose(String imgPath, int imgCount);
+    //public native void getCameraPose(String imgPath, int imgCount);
 
 }
